@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- connecting css -->
+    <link rel="stylesheet" href="/CSS/style.css">
+
+    <%- include('../partials/css') %>
+    <title>Home</title>
+</head>
+<body>
+    <!-- nav bar -->
+    <%- include('../partials/nav') %>
+
+    <h1 class="text-center">Blog</h1>
+
+    <div class="d-flex justify-content-center mt-5"  >
+        <form action="/" method="get" class="w-50 d-flex justify-content-center">
+            <input type="text" id="searchblog" class="ps-3 w-75" placeholder="Search Blog" name="searchblog">
+            <input type="submit" class="ms-1"  value="Find">
+        </form >
+    </div>
+
+    <!-- blog card -->
+    <% if (datas.length>0) { %>
+        <div class="container mt-5 ">
+            <div class="row row-cols-4">   
+                <% datas.forEach(data => { %>
+                    <div class="col">
+                        <div class="card col mt-5" style="width: 18rem;" id="card">
+                            <img src="<%= data.image %>" height="200px" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Title : <%= data.title %></h5>
+                                <p class="card-title">Creater : <%= data.name %></p>
+                                <a href="/readblog/<%= data._id %>" class="btn btn-primary">Read</a>
+                                <a href="/delete/<%= data._id %>" class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    <% } else { %>
+        <h3 class="mt-5 text-center">
+            No Blog Found
+        </h2>
+    <% } %>   
+
+    <%- include('../partials/script') %>
+</body>
+</html>
+
+

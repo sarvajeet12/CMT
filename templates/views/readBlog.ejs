@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- connecting css -->
+    <link rel="stylesheet" href="/CSS/style.css">
+    
+    <%- include('../partials/css') %>
+    <title>Read Blog</title>
+</head>
+<body>
+    <!-- nav bar -->
+    <%- include('../partials/nav') %>
+    
+    <div class="container mt-3">
+        <h1><%= readBlog.title %></h1>
+        <img src="<%= readBlog.image %>" alt="image" width="70%" height="500px">
+        <pre style=" border: 1px solid red;"><%= readBlog.body %></pre>
+    </div>
+
+    <%- include('../partials/script') %>
+</body>
+</html>
+
+

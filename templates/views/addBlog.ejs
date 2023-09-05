@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/css') %>
+    <!-- Connecting CSS -->
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>Add Blog</title>
+</head>
+
+<body>
+    <!-- nav bar -->
+    <%- include('../partials/nav') %>
+        <div class="p-5">
+            <h1 class="text-center">Create Your Blog</h1>
+            <div class="p-3 d-flex justify-content-center">
+                <form class="w-75" action="/addblog" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="name" class="form-label fw-bold">Creater Name</label>
+                        <input type="text" class="form-control  border-black" id="name" name="name" aria-describedby="namelHelp" placeholder="Enter Creater Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="title" class="form-label fw-bold">Title of your blog</label>
+                        <input type="text" class="form-control  border-black" id="title" name="title" aria-describedby="titlelHelp" placeholder="Enter Title Blog">
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label fw-bold">Choose Image</label>
+                        <input class="form-control  border-black" name="image" type="file" id="image" aria-describedby="imagelHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="body" class="form-label fw-bold">Body of your blog</label>
+                        <textarea class="form-control  border-black" id="body" name="body" placeholder="Write from here..."></textarea>
+                      </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <%- include('../partials/script') %>
+</body>
+
+</html>

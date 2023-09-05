@@ -1,0 +1,8 @@
+textarea{
+    resize: none;
+    height: 100px;
+}
+
+#card{
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
